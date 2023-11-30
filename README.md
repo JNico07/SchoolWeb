@@ -2,4 +2,4 @@
 WebProg. Project (School Web)
 
 
-*qwdjkgbjkqdqwjn*
+*open the "School" folder*
