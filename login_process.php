@@ -15,6 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = $result->fetch_assoc();
         $_SESSION['user_id'] = $row['id'];
         $_SESSION['role'] = $row['role'];
+		$_SESSION['full_name'] = $row['full_name'];
 
         if ($_SESSION['role'] == 'admin') {
             header("Location: admin_dashboard.php");
