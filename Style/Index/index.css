@@ -9,7 +9,8 @@
     color: white;
 }
 .content-large {
-    background-color: white;
+    background-color: #167bff;
+    overflow: hidden;
 }
 /* Content Small side */
 .content-small {
