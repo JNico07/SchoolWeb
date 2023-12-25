@@ -2,6 +2,8 @@
 <html>
   <head>
 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>STI College CS501P</title>
 
     <link rel="stylesheet" href="Style/Index/grid_layout.css">
@@ -91,7 +93,7 @@
       </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="Script/popup_login.js"></script>
 
   </body>
 </html>
