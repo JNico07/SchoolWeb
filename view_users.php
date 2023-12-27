@@ -26,17 +26,12 @@ if ($result->num_rows > 0) {
 		<a href="add_student.php">Add New Student</a>
         <table border="1">
             <tr>
-                <th>Student ID</th>
                 <th>Full name</th>
-                <th>Birthday</th>
-                <th>Actions</th>
             </tr>
             <?php
             while ($row = $result->fetch_assoc()) {
                 echo "<tr>";
-                echo "<td>".$row['student_id']."</td>";
                 echo "<td>".$row['full_name']."</td>";
-                echo "<td>".$row['date_of_birth']."</td>";
                 echo "<td><a href='view_profile_admin.php?id=".$row['student_id']."'>View</a> | <a href='edit_user.php?id=".$row['student_id']."'>Edit</a> | <a href='delete_user.php?id=".$row['student_id']."'>Delete</a></td>";
                 echo "</tr>";
             }
@@ -54,3 +49,4 @@ if ($result->num_rows > 0) {
 
 $conn->close();
 ?>
+
