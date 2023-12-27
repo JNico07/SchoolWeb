@@ -1,15 +1,22 @@
 * {
     font-family: sans-serif, Arial, Helvetica;
+    box-sizing: border-box;
 }
+body {
+    margin: 0;
+}
+
 .header {
-    background-color: white;
+    background-color: #1b7eff;
+    color: white;
 }
 .footer {
     background-color: #006eff;
     color: white;
+    text-align: center;
 }
 .content-large {
-    background-color: #167bff;
+    background-color: white;
     overflow: hidden;
 }
 /* Content Small side */
