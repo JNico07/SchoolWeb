@@ -84,18 +84,6 @@ if (!isset($_SESSION['user_id'])) {
 						<span class="text">About</span>
 					</a>
 				</li>
-		<li>
-					<a href="#">
-						<span class="icon"><i class="fa fa-pen"></i></span>
-						<span class="text">Service</span>
-					</a>
-				</li>
-		<li>
-					<a href="#">
-						<span class="icon"><i class="fa fa-id-card"></i></span>
-						<span class="text">Contact</span>
-					</a>
-				</li>
 
 			</ul>
 			</div>
