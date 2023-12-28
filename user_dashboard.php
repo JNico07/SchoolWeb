@@ -13,7 +13,7 @@ if (!isset($_SESSION['user_id'])) {
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Dashboard</title>
+	<title>Dashboard - STI College</title>
 
 	<link rel="stylesheet" href="Style/Dashboard/sidebar_menu.css">
 	<link rel="stylesheet" href="Style/Dashboard/dropdown_menu.css">

@@ -1,0 +1,76 @@
+.container * {
+    font-weight: 300;
+}
+/* Header */
+.container .header div {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    
+    padding-bottom: 20px;
+    border: none;
+}
+.container .header h5 {
+    font-size: 26px;
+}
+.container .header sub {
+    font-size: smaller;
+}
+.container .header div #user-img {
+    width:200px;
+    object-fit: cover;
+    margin-right: 10px;
+    border-radius: 50%;
+
+    margin-right: 50px;
+    margin-left: 40px;
+}
+
+/* content-large */
+.container .content-large {
+    gap: 0;
+    padding: 0;
+    margin: 0;
+}
+.container .content-large div{
+    border: none;
+    margin-left: 40px;
+}
+.container .content-large h4 {
+    margin: 20px;
+    margin-left: 30px;
+}
+.container .content-large hr {
+    margin-bottom: 30px;
+}
+.container .content-large li {
+    list-style-type: disc;
+}
+/* content-small */
+.container .content-small {
+    gap: 0;
+    padding: 0;
+    margin: 0;
+}
+.container .content-small h5{
+    margin: 20px;
+}
+.container .content-small p {
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+
+
+
+
+.footer {
+    background-color:#167bff; /* Set the background color of the footer */
+    color: #fff; /* Set the text color of the footer */
+    text-align: center;
+    padding: 5px; /* Adjust padding as needed */
+    position: fixed; /* Fixed position at the bottom */
+    width: 100%;
+    bottom: 0;
+	left: 0;
+}
