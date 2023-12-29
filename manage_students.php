@@ -3,11 +3,10 @@ session_start();
 
 include('db.php');
 
-if (!isset($_SESSION['user_id'])) {
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
     header("Location: login.php");
     exit();
 }
-
 
 // Fetch all users from the database
 $sql = "SELECT * FROM students";
@@ -16,13 +15,11 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
 ?>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	
-	<meta charset="UTF-8">
+
+    <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Admin - STI College</title>
@@ -39,33 +36,31 @@ if ($result->num_rows > 0) {
 
     <div class="container">
         <div class="header">
-            <h3>Welcome to the Admin Dashboard</h3>
+            <h3>Student Management</h3>
         </div>
 
         <div class="content-large">
+
             <!-- Start Student List Table -->
 			<table>
 				<tr>
 					<th>Student Full name</th>
-					<th>Contact</th>
-					<th>Parent/Guardian</th>
+                    <th>Actions</th>
 				</tr>
 				<?php
 					while ($row = $result->fetch_assoc()) {
 						echo "<tr>";
-							echo "<td>".$row['full_name']."</td>";
-							echo "<td>".$row['contact_information']."</td>";  // Corrected column name
-							echo "<td>".$row['parent_guardian']."</td>";
-						echo "</tr>";
+                        echo "<td>".$row['full_name']."</td>";
+                        echo "<td><a href='view_profile_admin.php?id=".$row['student_id']."'>View</a> | <a href='edit_user.php?id=".$row['student_id']."'>Edit</a> | <a href='delete_user.php?id=".$row['student_id']."'>Delete</a></td>";
+                        echo "</tr>";
 					}
 				?>
 			</table>
             <!-- End Student List Table -->
             
-            
-			<a href="manage_students.php">
+			<a href="add_student.php">
 				<button class="manage-student-button">
-					Manage Students
+                    Add New Student
 				</button>
 			</a> 
             
@@ -157,8 +152,6 @@ if ($result->num_rows > 0) {
 </body>
 </html>
 
-
-
 <?php
 } else {
     echo "No users found.";
@@ -166,3 +159,4 @@ if ($result->num_rows > 0) {
 
 $conn->close();
 ?>
+

@@ -18,6 +18,9 @@ body{
     padding: 0px; 
     border-radius: 15px;
 }
+.header h3 {
+    padding-left: 10px;
+}
 
 .content-large {
     position: relative;
@@ -49,13 +52,16 @@ body{
 /* button */
 .content-large .manage-student-button {
     background-color: #4294ff;
+    color: white;
     border-color: #fff48e;
     border-radius: 15px;
-    padding: 10px;
+    padding: 20px;
 
     position: absolute;
     bottom: 10px;
     right: 10px;
+
+    font-size: 16px;
 }
 
 

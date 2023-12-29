@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <button type="submit">Add Student</button>
         </form>
         <br>
-        <a href="view_users.php">Back to Students List</a>
+        <a href="manage_students.php">Back to Student Management</a>
         <a href="admin_dashboard.php">Back to Dashboard</a>
     </div>
 </body>
