@@ -1,4 +1,6 @@
-
+.loginPopup * {
+  font-weight: 300;
+}
 .header {
   display: flex;
   justify-content: space-between;
