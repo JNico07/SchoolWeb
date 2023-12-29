@@ -59,7 +59,7 @@ if ($result->num_rows > 0) {
 					}
 				?>
 			</table>
-            <!-- Start Student List Table -->
+            <!-- End Student List Table -->
             
             
 			<a href="view_users.php">
