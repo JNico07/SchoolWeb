@@ -1,0 +1,26 @@
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+
+a:hover {
+    background-color: #172a4d;
+    color: rgb(255, 255, 255);
+}
+
+.previous {
+    background-color: #398dfa;
+    color: rgb(253, 253, 253);
+    border-color: yellow;
+}
+
+
+.round {
+    border-radius: 50%; 
+}
+
+#prev_btn {
+    border-radius: 50%;
+}

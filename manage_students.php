@@ -26,8 +26,13 @@ if ($result->num_rows > 0) {
 
     <link rel="stylesheet" href="ADMIN/Style/Admin_Dashboard/dropdown_menu.css">
     <link rel="stylesheet" href="ADMIN/Style/Admin_Dashboard/sidebar_menu.css">
-    <link rel="stylesheet" href="ADMIN/Style/Admin_Dashboard/grid_layout.css">
     <link rel="stylesheet" href="ADMIN/Style/Admin_Dashboard/admin_dashboard.css">
+
+	<link rel="stylesheet" href="ADMIN/Style/Add_Student_Form/grid_layout.css">
+
+	<link rel="stylesheet" href="ADMIN/Style/General/prev_btn.css">
+
+	<link rel="stylesheet" href="ADMIN/Style/Manage_Students/manage_students.css">
 
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
@@ -41,29 +46,38 @@ if ($result->num_rows > 0) {
 
         <div class="content-large">
 
-            <!-- Start Student List Table -->
-			<table>
-				<tr>
-					<th>Student Full name</th>
-                    <th>Actions</th>
-				</tr>
-				<?php
-					while ($row = $result->fetch_assoc()) {
-						echo "<tr>";
-                        echo "<td>".$row['full_name']."</td>";
-                        echo "<td><a href='view_profile_admin.php?id=".$row['student_id']."'>View</a> | <a href='edit_user.php?id=".$row['student_id']."'>Edit</a> | <a href='delete_user.php?id=".$row['student_id']."'>Delete</a></td>";
-                        echo "</tr>";
-					}
-				?>
-			</table>
-            <!-- End Student List Table -->
+			<div id="table-wrapper">
+				<!-- Start Student List Table -->
+				<table>
+					<tr>
+						<th>Student Full name</th>
+						<th>Actions</th>
+					</tr>
+					<?php
+						while ($row = $result->fetch_assoc()) {
+							echo "<tr>";
+							echo "<td>".$row['full_name']."</td>";
+							echo "<td><a href='view_profile_admin.php?id=".$row['student_id']."'>View</a> | <a href='edit_user.php?id=".$row['student_id']."'>Edit</a> | <a href='delete_user.php?id=".$row['student_id']."'>Delete</a></td>";
+							echo "</tr>";
+						}
+					?>
+				</table>
+				<!-- End Student List Table -->
+			</div>
             
-			<a href="add_student.php">
-				<button class="manage-student-button">
-                    Add New Student
+			<div id="container-btn">
+                        
+				<button id="prev_btn">
+					<a href="admin_dashboard.php" class="previous round">&#8249;</a>
 				</button>
-			</a> 
-            
+
+				<a href="add_student.php">
+					<button class="manage-student-button">
+						Add New Student
+					</button>
+				</a> 
+                        
+            </div>
 
         </div>
 

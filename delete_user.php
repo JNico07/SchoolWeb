@@ -37,4 +37,4 @@ $conn->close();
 ?>
 
 <br>
-<a href="view_users.php">Back to User Management</a>
+<a href="manage_students.php">Back to User Management</a>

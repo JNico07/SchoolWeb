@@ -1,0 +1,22 @@
+#table-wrapper {
+    border: none;
+}
+
+/* button */
+#container-btn {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    margin-top: 25px; 
+    border: none;
+  }
+.manage-student-button {
+    font-size: 16px;
+    border-radius: 15px;
+    padding: 14px 25px;
+    border-color: yellow;
+    font-weight: 500;
+    background-color: #398dfa;
+    color: white;
+    cursor: pointer;
+}

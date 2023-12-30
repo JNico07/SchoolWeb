@@ -32,6 +32,7 @@ if ($result->num_rows > 0) {
     <link rel="stylesheet" href="ADMIN/Style/Admin_Dashboard/grid_layout.css">
     <link rel="stylesheet" href="ADMIN/Style/Admin_Dashboard/admin_dashboard.css">
 
+
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
 </head>
