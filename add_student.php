@@ -1,40 +1,46 @@
 <?php
-session_start();
+    session_start();
 
-include('db.php');
+    include('db.php');
 
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
-    header("Location: login.php");
-    exit();
-}
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Process the form submission
-    $full_name = $_POST['full_name'];
-    $date_of_birth = $_POST['date_of_birth'];
-    $gender = $_POST['gender'];
-    $contact_information = $_POST['contact_information'];
-    $parent_guardian = $_POST['parent_guardian'];
-    $health_information = $_POST['health_information'];
-
-    // Validate and sanitize input (you should perform more validation)
-    $full_name = mysqli_real_escape_string($conn, $full_name);
-    $date_of_birth = mysqli_real_escape_string($conn, $date_of_birth);
-    $gender = mysqli_real_escape_string($conn, $gender);
-    $contact_information = mysqli_real_escape_string($conn, $contact_information);
-    $parent_guardian = mysqli_real_escape_string($conn, $parent_guardian);
-    $health_information = mysqli_real_escape_string($conn, $health_information);
-
-    // Insert the new student record into the database
-    $sql = "INSERT INTO students (full_name, date_of_birth, gender, contact_information, parent_guardian, health_information) 
-            VALUES ('$full_name', '$date_of_birth', '$gender', '$contact_information', '$parent_guardian', '$health_information')";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "New student added successfully!";
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+    if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
+        header("Location: login.php");
+        exit();
     }
-}
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        // Process the form submission
+        $full_name = $_POST['full_name'];
+        $date_of_birth = $_POST['date_of_birth'];
+        $gender = $_POST['gender'];
+        $contact_information = $_POST['contact_information'];
+        $parent_guardian = $_POST['parent_guardian'];
+        $health_information = $_POST['health_information'];
+
+        // Validate and sanitize input (you should perform more validation)
+        $full_name = mysqli_real_escape_string($conn, $full_name);
+        $date_of_birth = mysqli_real_escape_string($conn, $date_of_birth);
+        $gender = mysqli_real_escape_string($conn, $gender);
+        $contact_information = mysqli_real_escape_string($conn, $contact_information);
+        $parent_guardian = mysqli_real_escape_string($conn, $parent_guardian);
+        $health_information = mysqli_real_escape_string($conn, $health_information);
+
+        // Insert the new student record into the database
+        $sql = "INSERT INTO students (full_name, date_of_birth, gender, contact_information, parent_guardian, health_information) 
+                VALUES ('$full_name', '$date_of_birth', '$gender', '$contact_information', '$parent_guardian', '$health_information')";
+
+        if ($conn->query($sql) === TRUE) {
+            $message = "New student added successfully!";
+            $alertType = "success";
+        } else {
+            $message = "Error: " . $sql . "<br>" . $conn->error;
+            $alertType = "danger";
+        }
+
+        // Output the message and alert
+        echo "<div id='alert-message' style='display: none;'>$message</div>";
+        echo "<div id='alert-type' style='display: none;'>$alertType</div>";
+    }
 ?>
 
 <!DOCTYPE html>
@@ -46,14 +52,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Admin - STI College</title>
 
-    <link rel="stylesheet" href="ADMIN/Style/Admin_Dashboard/dropdown_menu.css">
-    <link rel="stylesheet" href="ADMIN/Style/Admin_Dashboard/sidebar_menu.css">
-    <link rel="stylesheet" href="ADMIN/Style/Admin_Dashboard/admin_dashboard.css">
+    <link rel="stylesheet" href="Style/General/sidebar_menu.css">
+	<link rel="stylesheet" href="Style/General/dropdown_menu.css">
 
-    <link rel="stylesheet" href="ADMIN/Style/Add_Student_Form/grid_layout.css">
-    <link rel="stylesheet" href="ADMIN/Style/Add_Student_Form/form.css">
+    <link rel="stylesheet" href="Style/ADMIN/Admin_Dashboard/admin_dashboard.css">
 
-    <link rel="stylesheet" href="ADMIN/Style/General/prev_btn.css">
+    <link rel="stylesheet" href="Style/ADMIN/Add_Student_Form/grid_layout.css">
+    <link rel="stylesheet" href="Style/ADMIN/Add_Student_Form/form.css">
+
+    <link rel="stylesheet" href="Style/General/prev_btn.css">
 
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
@@ -68,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="content-large">
 
             <div id="form-wrapper">
-
+                <!-- Start Student Form -->
                 <form method="post" action="add_student.php">
                     <div id="form-title">
                         <h2>New Student</h2>
@@ -123,8 +130,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <button type="submit" class="btn">Add Student</button>
                         
                     </div>
-                    
                 </form>
+                <!-- End Student Form -->
             </div>
         </div>
 
@@ -167,21 +174,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="manage_students.php">
 						<span class="icon"><i class="fa fa-link"></i></span>
-						<span class="text">Courses</span>
+						<span class="text">Management</span>
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="add_student.php">
 						<span class="icon"><i class="fa fa-bullseye"></i></span>
-						<span class="text">Goals</span>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<span class="icon"><i class="fa fa-circle"></i></span>
-						<span class="text">Groups</span>
+						<span class="text">Add</span>
 					</a>
 				</li>
 				<li>
@@ -210,7 +211,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 	<script src="Script/sidebar.js"> </script>
-
+    <script src="Script/alert.js" defer></script>
 
 </body>
 </html>

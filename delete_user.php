@@ -22,9 +22,18 @@ if (isset($_GET['id'])) {
 
     // Execute the query
     if ($stmt->execute()) {
-        echo "Student deleted successfully!";
+        // Use JavaScript to show an alert for success
+        echo '<script>alert("Student deleted successfully!");</script>';
+        
+        // Redirect to the manage_students.php page after successful deletion
+        echo '<script>window.location.href = "manage_students.php";</script>';
+        exit();
     } else {
-        echo "Error deleting student: " . $stmt->error;
+        // Log the error for debugging purposes
+        error_log("Error deleting student: " . $stmt->error);
+        
+        // Use JavaScript to show an alert for the error
+        echo '<script>alert("Error deleting student. Please try again later.");</script>';
     }
 
     // Close the statement
@@ -36,5 +45,6 @@ if (isset($_GET['id'])) {
 $conn->close();
 ?>
 
+<!-- You can keep the HTML part as it is -->
 <br>
 <a href="manage_students.php">Back to User Management</a>

@@ -25,8 +25,9 @@ if ($result->num_rows > 0) {
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Profile - STI College</title>
 
-    <link rel="stylesheet" href="Style/Dashboard/sidebar_menu.css">
-	<link rel="stylesheet" href="Style/Dashboard/dropdown_menu.css">
+    <link rel="stylesheet" href="Style/General/sidebar_menu.css">
+	<link rel="stylesheet" href="Style/General/dropdown_menu.css">
+
 	<link rel="stylesheet" href="Style/Dashboard/user_dashboard.css">
 
     <link rel="stylesheet" href="Style/Profile/grid_layout.css">

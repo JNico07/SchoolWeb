@@ -15,8 +15,9 @@ if (!isset($_SESSION['user_id'])) {
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Dashboard - STI College</title>
 
-	<link rel="stylesheet" href="Style/Dashboard/sidebar_menu.css">
-	<link rel="stylesheet" href="Style/Dashboard/dropdown_menu.css">
+	<link rel="stylesheet" href="Style/General/sidebar_menu.css">
+	<link rel="stylesheet" href="Style/General/dropdown_menu.css">
+
 	<link rel="stylesheet" href="Style/Dashboard/grid_layout.css">
 	<link rel="stylesheet" href="Style/Dashboard/user_dashboard.css">
 	<link rel="stylesheet" href="Style/Dashboard/calendar.css">

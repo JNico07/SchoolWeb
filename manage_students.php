@@ -24,15 +24,16 @@ if ($result->num_rows > 0) {
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Admin - STI College</title>
 
-    <link rel="stylesheet" href="ADMIN/Style/Admin_Dashboard/dropdown_menu.css">
-    <link rel="stylesheet" href="ADMIN/Style/Admin_Dashboard/sidebar_menu.css">
-    <link rel="stylesheet" href="ADMIN/Style/Admin_Dashboard/admin_dashboard.css">
+    <link rel="stylesheet" href="Style/General/sidebar_menu.css">
+	<link rel="stylesheet" href="Style/General/dropdown_menu.css">
 
-	<link rel="stylesheet" href="ADMIN/Style/Add_Student_Form/grid_layout.css">
+    <link rel="stylesheet" href="Style/ADMIN/Admin_Dashboard/admin_dashboard.css">
 
-	<link rel="stylesheet" href="ADMIN/Style/General/prev_btn.css">
+	<link rel="stylesheet" href="Style/ADMIN/Add_Student_Form/grid_layout.css">
 
-	<link rel="stylesheet" href="ADMIN/Style/Manage_Students/manage_students.css">
+	<link rel="stylesheet" href="Style/General/prev_btn.css">
+
+	<link rel="stylesheet" href="Style/ADMIN/Manage_Students/manage_students.css">
 
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
@@ -119,21 +120,15 @@ if ($result->num_rows > 0) {
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="manage_students.php">
 						<span class="icon"><i class="fa fa-link"></i></span>
-						<span class="text">Courses</span>
+						<span class="text">Management</span>
 					</a>
 				</li>
 				<li>
-					<a href="#">
+					<a href="add_student.php">
 						<span class="icon"><i class="fa fa-bullseye"></i></span>
-						<span class="text">Goals</span>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<span class="icon"><i class="fa fa-circle"></i></span>
-						<span class="text">Groups</span>
+						<span class="text">Add</span>
 					</a>
 				</li>
 				<li>
